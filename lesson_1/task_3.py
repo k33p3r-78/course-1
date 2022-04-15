@@ -15,3 +15,4 @@ for i in range(1, 101):
     elif i % 10 == 0: print(i, 'процентов')
     elif i < 5 or i % 10 < 5 and i > 15: print(i, 'процента')
     else: print(i, 'процентов')
+    

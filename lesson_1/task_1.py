@@ -26,10 +26,7 @@ duratation %= hour
 mins = duratation // minute
 duratation %= minute
 
-if days:
-    print(days, 'дн', end=' ')
-if hours:
-    print(hours, 'час', end=' ')
-if mins:
-    print(mins, 'мин', end=' ')
+if days: print(days, 'дн', end=' ')
+if hours: print(hours, 'час', end=' ')
+if mins: print(mins, 'мин', end=' ')
 print(duratation, 'сек')
