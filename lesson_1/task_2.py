@@ -7,9 +7,25 @@
 # * Решить задачу под пунктом b, не создавая новый список.
 
 arr = []
-i = 0
-while i <= 1000:
-    i += 1
+
+for i in range(1000):
     if i % 2:
         arr.append(i ** 3)
 
+odd_arr = []
+for index, el in enumerate(arr):
+    digits = 0
+    while el // 10:
+        digits += el % 10
+        el //= 10
+    else:
+        digits += el % 10
+
+    if not digits % 7:
+        odd_arr.append(arr[index])
+
+sum_arr = 0
+for el in odd_arr:
+    sum_arr += el
+
+print(sum_arr)
