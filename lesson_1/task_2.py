@@ -29,3 +29,22 @@ for el in odd_arr:
     sum_arr += el
 
 print(sum_arr)
+
+############################################################################################################
+
+for index, el in enumerate(arr):
+    arr[index] = el + 17
+
+sum_arr = 0
+for index, el in enumerate(arr):
+    digits = 0
+    while el // 10:
+        digits += el % 10
+        el //= 10
+    else:
+        digits += el % 10
+
+    if not digits % 7:
+        sum_arr += arr[index]
+
+print(sum_arr)
