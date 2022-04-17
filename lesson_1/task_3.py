@@ -12,6 +12,6 @@
 
 for i in range(1, 201):
     if i % 10 == 0 or i % 100 >= 11 and i % 100 < 15: print(i, 'процентов')
-    elif i == 1 or i % 10 == 1 and i % 100 != 11: print(i, 'процент')
+    elif i % 10 == 1 and i % 100 != 11: print(i, 'процент')
     elif i % 10 < 5: print(i, 'процента')
     else: print(i, 'процентов')
