@@ -10,9 +10,8 @@
 # ...
 # 100 процентов
 
-for i in range(1, 101):
-    if i == 1 or i % 10 == 1 and i > 15: print(i, 'процент')
-    elif i % 10 == 0: print(i, 'процентов')
+for i in range(1, 201):
+    if i % 10 == 0 or i >= 110 and i < 115: print(i, 'процентов')
+    elif i == 1 or i % 10 == 1 and i > 15: print(i, 'процент')
     elif i < 5 or i % 10 < 5 and i > 15: print(i, 'процента')
     else: print(i, 'процентов')
-    
