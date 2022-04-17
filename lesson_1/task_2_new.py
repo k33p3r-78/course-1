@@ -15,14 +15,15 @@ while i < 1000:
     i += 1
     if i % 2 == 1: 
         cube = i ** 3
+        digits = cube
         digits_sum = 0
-        while cube // 10:
-            digits_sum += cube % 10
-            cube //= 10
+        while digits // 10:
+            digits_sum += digits % 10
+            digits //= 10
         else:
-            digits_sum += cube % 10
+            digits_sum += digits
         if not digits_sum % 7: 
             res_sum += i
-            print(f"{i}^3 = {i**3}; [{digits_sum}] {res_sum}")
+            print(f"{i}^3 = {cube}; [{digits_sum}] {res_sum}")
 
     
