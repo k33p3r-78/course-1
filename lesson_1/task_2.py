@@ -18,8 +18,7 @@ for index, el in enumerate(arr):
     while el // 10:
         digits += el % 10
         el //= 10
-    else:
-        digits += el
+    digits += el
 
     if not digits % 7:
         odd_arr.append(arr[index])
@@ -41,8 +40,7 @@ for index, el in enumerate(arr):
     while el // 10:
         digits += el % 10
         el //= 10
-    else:
-        digits += el
+    digits += el
 
     if not digits % 7:
         sum_arr += arr[index]

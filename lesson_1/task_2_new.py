@@ -20,8 +20,7 @@ while i < 1000:
         while digits // 10:
             digits_sum += digits % 10
             digits //= 10
-        else:
-            digits_sum += digits
+        digits_sum += digits
         if not digits_sum % 7: 
             res_sum += i
             print(f"{i}^3 = {cube}; [{digits_sum}] {res_sum}")
