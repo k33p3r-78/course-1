@@ -10,18 +10,21 @@ arr3 = ['+9', 'примерно в', '23', 'часа', '8', 'минут', '03',
 
 
 
-new_arr = []
+extnd = False
 for index, el in enumerate(arr1):
+    if extnd:
+        extnd = False
+        continue
     if el.startswith('+') or el.startswith('-'):
         el = el[1:]
     if el.isnumeric():
-        new_arr.extend(['"', arr1[index], '"'])
-        continue
-    new_arr.append(arr1[index])
+        arr1.insert(index, '"')
+        arr1.insert(index + 2, '"')
+        extnd = True
 
 res_str = ''
 q_opened = False
-for el in new_arr:
+for el in arr1:
     if el == '"' and not q_opened:
         res_str += ' ' + el
         q_opened = True
@@ -37,21 +40,23 @@ res_str = res_str.lstrip()
 print(res_str)
 
 
-#########################################################################
+################################################################
 
-
-new_arr = []
+extnd = False
 for index, el in enumerate(arr2):
+    if extnd:
+        extnd = False
+        continue
     if el.startswith('+') or el.startswith('-'):
         el = el[1:]
     if el.isnumeric():
-        new_arr.extend(['"', arr2[index], '"'])
-        continue
-    new_arr.append(arr2[index])
+        arr2.insert(index, '"')
+        arr2.insert(index + 2, '"')
+        extnd = True
 
 res_str = ''
 q_opened = False
-for el in new_arr:
+for el in arr2:
     if el == '"' and not q_opened:
         res_str += ' ' + el
         q_opened = True
@@ -67,18 +72,21 @@ res_str = res_str.lstrip()
 print(res_str)
 
 
-new_arr = []
+extnd = False
 for index, el in enumerate(arr3):
+    if extnd:
+        extnd = False
+        continue
     if el.startswith('+') or el.startswith('-'):
         el = el[1:]
     if el.isnumeric():
-        new_arr.extend(['"', arr3[index], '"'])
-        continue
-    new_arr.append(arr3[index])
+        arr3.insert(index, '"')
+        arr3.insert(index + 2, '"')
+        extnd = True
 
 res_str = ''
 q_opened = False
-for el in new_arr:
+for el in arr3:
     if el == '"' and not q_opened:
         res_str += ' ' + el
         q_opened = True
@@ -92,4 +100,3 @@ for el in new_arr:
 
 res_str = res_str.lstrip()
 print(res_str)
-
