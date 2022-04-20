@@ -8,11 +8,13 @@ for i in range(randint(10, 20)):
 
 print('Исходный список: \n', price_list)
 
+tmp_arr = []
 for price in price_list:
     rub = int(price)
     kop = int((price - rub) * 100)
 
-    print(f'{rub} руб. {kop:02} коп.', end=', ')
+    tmp_arr.append(f'{rub} руб. {kop:02} коп.')
+print(', '.join(tmp_arr))
 
 print('\n\nДоказательство операции in place:')
 print(f'\tid перед сортировкой: {id(price_list)}')
