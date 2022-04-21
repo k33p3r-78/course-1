@@ -12,10 +12,12 @@ arr3 = ['+9', 'примерно в', '23', 'часа', '8', 'минут', '03',
 
 new_arr = []
 for index, el in enumerate(arr1):
+    length = 2
     if el.startswith('+') or el.startswith('-'):
         el = el[1:]
+        length = 3
     if el.isnumeric():
-        new_arr.extend(['"', arr1[index], '"'])
+        new_arr.extend(['"', arr1[index].zfill(length), '"'])
         continue
     new_arr.append(arr1[index])
 
@@ -42,10 +44,12 @@ print(res_str)
 
 new_arr = []
 for index, el in enumerate(arr2):
+    length = 2
     if el.startswith('+') or el.startswith('-'):
         el = el[1:]
+        length = 3
     if el.isnumeric():
-        new_arr.extend(['"', arr2[index], '"'])
+        new_arr.extend(['"', arr2[index].zfill(length), '"'])
         continue
     new_arr.append(arr2[index])
 
@@ -69,10 +73,12 @@ print(res_str)
 
 new_arr = []
 for index, el in enumerate(arr3):
+    length = 2
     if el.startswith('+') or el.startswith('-'):
         el = el[1:]
+        length = 3
     if el.isnumeric():
-        new_arr.extend(['"', arr3[index], '"'])
+        new_arr.extend(['"', arr3[index].zfill(length), '"'])
         continue
     new_arr.append(arr3[index])
 
