@@ -41,7 +41,7 @@ def currency_rates(url, currency):
     content = r.content.decode(encoding=encodings)
     # Обрезаем служебную информацию
     content = content[103:-10]
-    # Генерируем словарь название: курс к рублю
+    # Генерируем словарь { название: курс к рублю }
     exchange_rate = {}
     for line in content.split("</Valute>"):
         if not line: continue
