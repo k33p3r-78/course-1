@@ -51,7 +51,7 @@ def currency_rates(url, currency):
         value_to = line.find('</Value>')
         char_code = line[char_code_from:char_code_to]
         value = line[value_from:value_to]
-        exchange_rate[char_code] = value
+        exchange_rate[char_code] = float(value.replace(",", "."))
 
     # Если запрошеная валюта есть в словаре, возвращаем значение
     currency = currency.upper()
