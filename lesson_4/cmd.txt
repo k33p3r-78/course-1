@@ -1,0 +1,28 @@
+C:\Users\root>pip list | find "Pillow"
+
+C:\Users\root>pip install pillow
+Collecting pillow
+  Using cached Pillow-9.1.0-cp310-cp310-win_amd64.whl (3.3 MB)
+Installing collected packages: pillow
+Successfully installed pillow-9.1.0
+
+C:\Users\root>pip list | find "Pillow"
+Pillow            9.1.0
+
+H:\coding\python\GB\course-1\lesson_4>python -m venv virt
+
+H:\coding\python\GB\course-1\lesson_4\virt\Scripts>activate
+
+(virt) H:\coding\python\GB\course-1\lesson_4\virt\Scripts>pip list
+Package    Version
+---------- -------
+pip        22.0.4
+setuptools 58.1.0
+
+(virt) H:\coding\python\GB\course-1\lesson_4\virt\Scripts>pip install pillow==8.4.0
+Collecting pillow==8.4.0
+  Using cached Pillow-8.4.0-cp310-cp310-win_amd64.whl (3.2 MB)
+Installing collected packages: pillow
+Successfully installed pillow-8.4.0
+(virt) H:\coding\python\GB\course-1\lesson_4\virt\Scripts>deactivate.bat
+H:\coding\python\GB\course-1\lesson_4\virt\Scripts>
