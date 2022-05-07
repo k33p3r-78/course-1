@@ -26,9 +26,12 @@
 #  'дом позавчера зеленый',
 #  'город вчера утопичный']
 # >>> 
+
 from random import choice
 
 def get_jokes(number_of_jokes, list1, list2, list3):
+    """Функция генерирует заданное количество шуток из переданных списков слов"""
+    
     res_jokes = []
     for i in range(number_of_jokes):
         res_jokes.append(f'{choice(list1)} {choice(list2)} {choice(list3)}')
@@ -42,4 +45,5 @@ if __name__ == '__main__':
 
     print(*get_jokes(10, nouns, adverbs, adjectives), sep='\n')
     print()
+
     print(*get_jokes(2, nouns, adverbs, adjectives), sep='\n')
