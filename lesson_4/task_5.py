@@ -36,11 +36,11 @@ else:
     cr_res = utils.currency_rates(url, args.cur)
 
 if not cr_res:
-    print(f'\t{args.cur}: Не найдена валюта')
+    print(f'\t{args.cur.upper()}: Не найдена валюта')
 elif date:
     print(f'\t{args.cur.upper()}({date}): {cr_res}')
 else:
-    print(f'\t{args.cur}: {cr_res}')
+    print(f'\t{args.cur.upper()}: {cr_res}')
 
 
 
