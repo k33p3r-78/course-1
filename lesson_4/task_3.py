@@ -55,7 +55,8 @@ def currency_rates_advanced(url, currency):
     currency = currency.upper()
     if currency in exchange_rate:
         return res_date, exchange_rate[currency]
-    else:        return None
+    else:
+        return None
 
 
 if __name__ == '__main__':
