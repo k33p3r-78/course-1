@@ -29,8 +29,11 @@
 #   File "<input>", line 1, in <module>
 # StopIteration
 
+# Усложнение [одна звездочка]:
+# нужен генератор нечётных чисел от 1 до n (включительно), для чисел, квадрат которых меньше 200. Все остальное как в основном задании.
+
 def iterator_without_yield(n):
-    return (x for x in range(1, n+1, 2))
+    return (x for x in range(1, n+1, 2) if x ** 2 < 200)
 
 odd_nums = iterator_without_yield(11)
 while True:
