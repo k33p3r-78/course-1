@@ -16,13 +16,25 @@
 #     ...
 # ]
 
-from pathlib import PurePath, Path
+from pathlib import Path
 
 
-log_path = Path().joinpath("data", "task_1", "nginx_logs.txt")
-print(log_path.resolve())
+log_path = Path().resolve().joinpath("data", "task_1", "nginx_logs.txt")
 nginx_logs_file = open(log_path, mode = "rt", encoding = "UTF-8")
+res_list = []
 for line in nginx_logs_file:
-    print(line)
-    break
+    ip_start = 0
+    ip_end = line.find(" - - [")
+    ip = line[ip_start:ip_end]
+    req_format_start = line.find("] \"") + 3
+    req_format_end = line.find(" /")
+    req_format = line[req_format_start:req_format_end]
+    target_start = req_format_end + 1
+    target_end = line.find(" HTTP/1.1")
+    target = line[target_start:target_end]
+    
+    res_list.append( (ip, req_format, target) )
 nginx_logs_file.close()
+
+print(*res_list, sep='\n')
+
