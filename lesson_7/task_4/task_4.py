@@ -5,6 +5,7 @@ import json
 
 res_dict = {}
 borders = [100, 1000, 10000, 100000]
+borders.sort()
 
 dir_to_scan = Path().resolve().joinpath('some_data')
 dirs_list = [dir_to_scan]
