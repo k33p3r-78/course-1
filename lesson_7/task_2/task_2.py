@@ -1,5 +1,7 @@
 import json
 
+#**************НЕ РЕШЕНО******************
+
 starter = {}
 folders = {}
 with open('config_2.yaml', mode='rt', encoding='UTF-8') as f:
