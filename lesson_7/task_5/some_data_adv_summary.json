@@ -1,0 +1,77 @@
+{
+  "100": [
+    0,
+    []
+  ],
+  "1000": [
+    8,
+    [
+      "jpg",
+      "mkv",
+      "css"
+    ]
+  ],
+  "10000": [
+    210,
+    [
+      "yaml",
+      "7z",
+      "pdf",
+      "py",
+      "json",
+      "csv",
+      "mkv",
+      "mp3",
+      "prn",
+      "txt",
+      "wma",
+      "mp4",
+      "tiff",
+      "wav",
+      "html",
+      "xps",
+      "jpg",
+      "flac",
+      "xml",
+      "css",
+      "bin",
+      "rar",
+      "dat",
+      "png",
+      "iso",
+      "ogg"
+    ]
+  ],
+  "100000": [
+    1782,
+    [
+      "mp3",
+      "wma",
+      "py",
+      "prn",
+      "txt",
+      "xml",
+      "png",
+      "tiff",
+      "flac",
+      "html",
+      "pdf",
+      "css",
+      "iso",
+      "7z",
+      "jpg",
+      "dat",
+      "yaml",
+      "json",
+      "csv",
+      "rar",
+      "mkv",
+      "wav",
+      "ogg",
+      "bin",
+      "mp4",
+      "xps",
+      "zip"
+    ]
+  ]
+}
