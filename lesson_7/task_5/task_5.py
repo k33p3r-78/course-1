@@ -25,5 +25,10 @@ for path in dirs_list:
                 break
 
 res_name = dir_to_scan.name + '_summary.json'
-with open(res_name, mode='wt', encoding='UTF-8') as f:
-    f.write(json.dumps(res_dict, indent=2))
+try:
+    with open(res_name, mode='wt', encoding='UTF-8') as f:
+        f.write(json.dumps(res_dict, indent=2))
+except OSError as e:
+    print(e)
+
+
