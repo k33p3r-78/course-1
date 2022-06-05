@@ -26,4 +26,3 @@ def render_input(*args, **kwargs):
 def calc_cube(x):
     return x ** 3
 
-render_input()
