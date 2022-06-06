@@ -4,29 +4,29 @@ import time
 
 class TrafficLight:
 
-    color_sleep = {
-        'красный': 7,
-        'жёлтый': 2,
-        'зелёный': 5
-    }
-
-    def __init__(self):
+    def __init__(self, red_time, yellow_time, green_time):
         self.__color = 'красный'
+        self._color_sleep = {
+            'красный': red_time,
+            'жёлтый': yellow_time,
+            'зелёный': green_time
+        }
 
     def state(self):
         return self.__color
 
     def running(self):
-        cd_to_off = 10
         color_queue = itertools.cycle(['красный', 'жёлтый', 'зелёный', 'жёлтый'])
         for color in color_queue:
             self.__color = color
             print(self.state())
-            time.sleep(TrafficLight.color_sleep[color])
-            cd_to_off -= 1
-            if cd_to_off == 0: break
+            try:
+                time.sleep(self._color_sleep[color])
+            except KeyboardInterrupt:
+                print('Прервано пользователем')
+                break
 
 
 if __name__ == '__main__':
-    t = TrafficLight()
+    t = TrafficLight(5, 3, 6)
     t.running()
