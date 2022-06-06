@@ -19,15 +19,12 @@ class TrafficLight:
     def running(self):
         cd_to_off = 10
         color_queue = itertools.cycle(['красный', 'жёлтый', 'зелёный', 'жёлтый'])
-        while color_queue:
-            for color in color_queue:
-                self.__color = color
-                print(self.state())
-                time.sleep(TrafficLight.color_sleep[color])
-                cd_to_off -= 1
-                if cd_to_off == 0:
-                    color_queue = None
-                    break
+        for color in color_queue:
+            self.__color = color
+            print(self.state())
+            time.sleep(TrafficLight.color_sleep[color])
+            cd_to_off -= 1
+            if cd_to_off == 0: break
 
 
 if __name__ == '__main__':
