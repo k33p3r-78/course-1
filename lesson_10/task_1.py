@@ -4,14 +4,23 @@ from random import randint
 class Matrix:
 
 
-    def __init__(self, width, height):
+    def __init__(self, *args, width=None, height=None):
         self._matrix = []
-        self.__width = width
-        self.__height = height
-        for i in range(height):
-            self._matrix.append(list())
-            for _ in range(width):
-                self._matrix[i].append(randint(-100, 100))
+        if width: self.__width = width
+        if height: self.__height = height
+
+        if not args and width and height:
+            for i in range(height):
+                self._matrix.append(list())
+                for _ in range(width):
+                    self._matrix[i].append(randint(-100, 100))
+        elif args:
+            for arr in args:
+                self._matrix.append(arr)
+            self.__height = len(args[0])
+            self.__width = len(args[0][0])
+        else:
+            raise ValueError('Не указаны исходные данные и параметры размерности')
 
     def __str__(self):
         res = ''
@@ -27,7 +36,7 @@ class Matrix:
             (self.__width != other.__width):
             raise ValueError('Матрицы разной размерности')
         
-        res = Matrix(self.__width, self.__height)
+        res = Matrix(width=self.__width, height=self.__height)
 
         for i in range(self.__height):
             for j in range(self.__width):
@@ -39,7 +48,11 @@ class Matrix:
 
 
 if __name__ == '__main__':
-    m1 = Matrix(5, 4)
-    m2 = Matrix(5, 4)
+    m1 = Matrix(width=5, height=4)
+    m2 = Matrix(width=5, height=4)
     print(m1, m2, sep='\n')
     print(type(m1+m2), m1+m2, sep='\n')
+
+
+
+
