@@ -4,8 +4,6 @@ from abc import ABC, abstractmethod
 class Clothes(ABC):
 
     _cloth_spent = 0
-    _s_clothe_spent = 0
-    _c_cloth_spent = 0
 
     def __init__(self, name):
         self.name = name
@@ -21,6 +19,7 @@ class Clothes(ABC):
 
 class Coat(Clothes):
 
+    _c_cloth_spent = 0
 
     def __init__(self, size, name='coat'):
         self._size = size
@@ -36,10 +35,11 @@ class Coat(Clothes):
 
     def add_to_reserve(self):
         Clothes._cloth_spent += self.cloth_require
-        Clothes._c_cloth_spent += self.cloth_require
+        Coat._c_cloth_spent += self.cloth_require
 
 class Suit(Clothes):
 
+    _s_clothe_spent = 0
 
     def __init__(self, growth, name='suit'):
         self._growth = growth
@@ -55,7 +55,7 @@ class Suit(Clothes):
 
     def add_to_reserve(self):
         Clothes._cloth_spent += self.cloth_require
-        Clothes._s_clothe_spent += self.cloth_require
+        Suit._s_clothe_spent += self.cloth_require
 
 
 if __name__ == '__main__':
