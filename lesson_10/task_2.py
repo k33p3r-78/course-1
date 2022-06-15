@@ -30,7 +30,7 @@ class Coat(Clothes):
         return self._size / 6.5 + 0.5
 
     @property
-    def coat_cloth_spent(self):
+    def cloth_spent(self):
         return self._c_cloth_spent
 
     def add_to_reserve(self):
@@ -50,7 +50,7 @@ class Suit(Clothes):
         return self._growth * 2 + 0.3
 
     @property
-    def suit_cloth_spent(self):
+    def cloth_spent(self):
         return self._s_clothe_spent
 
     def add_to_reserve(self):
@@ -67,18 +67,18 @@ if __name__ == '__main__':
     s3 = Suit(158)
 
     c1.add_to_reserve()
-    print(f'Потрачено такни на {c1.name}: {c1.cloth_require}')
+    print(f'Потрачено такни на {c1.name}: {c1.cloth_require:.2f}')
     c2.add_to_reserve()
-    print(f'Потрачено такни на {c2.name}: {c2.cloth_require}')
+    print(f'Потрачено такни на {c2.name}: {c2.cloth_require:.2f}')
     c3.add_to_reserve()
-    print(f'Потрачено такни на {c3.name}: {c3.cloth_require}')
+    print(f'Потрачено такни на {c3.name}: {c3.cloth_require:.2f}')
     s1.add_to_reserve()
-    print(f'Потрачено такни на {s1.name}: {s1.cloth_require}')
+    print(f'Потрачено такни на {s1.name}: {s1.cloth_require:.2f}')
     s2.add_to_reserve()
-    print(f'Потрачено такни на {s2.name}: {s2.cloth_require}')
+    print(f'Потрачено такни на {s2.name}: {s2.cloth_require:.2f}')
     s3.add_to_reserve()
-    print(f'Потрачено такни на {s3.name}: {s3.cloth_require}')
+    print(f'Потрачено такни на {s3.name}: {s3.cloth_require:.2f}')
 
-    print(f'Всего потрачено ткани: {c1.cloth_spent}')
-    print(f'На пальто: {c1.coat_cloth_spent}')
-    print(f'На костюмы: {s1.suit_cloth_spent}')
+    print(f'Всего потрачено ткани: {c1.cloth_spent:.2f}')
+    print(f'На пальто: {c1.cloth_spent:.2f}')
+    print(f'На костюмы: {s1.cloth_spent:.2f}')
